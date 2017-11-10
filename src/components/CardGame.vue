@@ -3,8 +3,14 @@
     <h2>{{ title }}</h2>
     <div v-for="value in values" class="card-container">
       <div v-for="suite in suites" class="card">
-        <p>{{ value }}</p>
-        <p>{{ suite.icon }}</p>
+        <div class="top">
+          <p>{{ value }}</p>
+          <p>{{ suite.icon }}</p>
+        </div>
+        <div class="bottom">
+          <p>{{ suite.icon }}</p>
+          <p>{{ value }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -29,7 +35,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style scoped>
 .card-container {
   display: flex;
   justify-content: center;
@@ -42,8 +48,21 @@ export default {
   margin: 10px;
   height: 100px;
   width: 50px;
-  p {
-
-  }
+}
+.card .top p {
+  margin: 0 0 0 7px;
+  line-height: 15px;
+  text-align: left;
+}
+.card .top p:first-child {
+  margin-top: 7px;
+}
+.card .bottom p {
+  margin: 0px 5px 0 0;
+  text-align: left;
+  transform: rotate(180deg);
+}
+.card .bottom p:nth-child(1) {
+  margin-top: 15px;
 }
 </style>
