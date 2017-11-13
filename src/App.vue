@@ -7,7 +7,6 @@
 
 <script>
 import CardGame from './components/CardGame'
-
 export default {
   name: 'app',
   components: {
